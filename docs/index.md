@@ -31,7 +31,7 @@
       <div class="kp-num">01</div>
       <div class="kp-meta">
         <div class="kp-label">Project structure</div>
-        <p class="kp-title">script to package</p>
+        <p class="kp-title">Script to package</p>
       </div>
       <span class="kp-duration">~45 min</span>
     </div>
@@ -45,6 +45,28 @@
     <div class="kp-footer">
       <div class="kp-footer-label">You'll create</div>
       <div class="kp-footer-val">A basic installable package</div>
+    </div>
+  </a>
+
+  <a href="episode-02/" class="kp-card kp-ep2">
+    <div class="kp-header">
+      <div class="kp-num">02</div>
+      <div class="kp-meta">
+        <div class="kp-label">DOCS</div>
+        <p class="kp-title">Docs That Write Themselves</p>
+      </div>
+      <span class="kp-duration">~30 min</span>
+    </div>
+    <div class="kp-body">
+      <ul class="kp-topics">
+        <li><code>roxygen</code>- anatomy and ttags</li>
+        <li><code>devtools::document()</code></li>
+        <li>Writing Vignette</li>
+      </ul>
+    </div>
+    <div class="kp-footer">
+      <div class="kp-footer-label">You'll create</div>
+      <div class="kp-footer-val"></div>
     </div>
   </a>
 

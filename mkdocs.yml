@@ -97,6 +97,15 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: r
+          class: r-block
+          validator: !!python/name:pymdownx.superfences.fence_code_format
+        - name: rmd
+          class: rmd-block
+          validator: !!python/name:pymdownx.superfences.fence_code_format
+        - name: md
+          class: md-block
+          validator: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -117,7 +126,7 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
-copyright : KIR "The Basics of Python Packaging" is licensed under a <a rel="noopener" target="_blank" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License v3.0</a>
+copyright : KIR "The Basics of R Packaging" is licensed under a <a rel="noopener" target="_blank" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License v3.0</a>
 
 
 extra_css:
@@ -132,3 +141,4 @@ extra_css:
   - stylesheets/code_block_colour_onedark.css
   - stylesheets/side_bar_menu.css
   - stylesheets/indexpage_episodes_cards.css
+  - stylesheets/code_block_colour_rmarkdown.css
