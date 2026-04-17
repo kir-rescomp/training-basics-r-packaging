@@ -24,3 +24,28 @@
 </p>
 
 
+<div class="kp-episode-grid">
+
+  <a href="episode-01/" class="kp-card kp-ep1">
+    <div class="kp-header">
+      <div class="kp-num">01</div>
+      <div class="kp-meta">
+        <div class="kp-label">Project structure</div>
+        <p class="kp-title">script to package</p>
+      </div>
+      <span class="kp-duration">~45 min</span>
+    </div>
+    <div class="kp-body">
+      <ul class="kp-topics">
+        <li>Why package your code ?</li>
+        <li>Anatomy of an R package</li>
+        <li>Scaffolding with <code>usethis</code></li>
+      </ul>
+    </div>
+    <div class="kp-footer">
+      <div class="kp-footer-label">You'll create</div>
+      <div class="kp-footer-val">A basic installable package</div>
+    </div>
+  </a>
+
+</div>
