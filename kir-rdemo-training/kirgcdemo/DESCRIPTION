@@ -1,0 +1,23 @@
+Package: kirgcdemo
+Title: DNA Sequence Analysis Utilities
+Version: 0.1.0
+Authors@R:
+    person("BMRC Training", role = c("aut", "cre"),
+           email = "rescomp@kennedy.ox.ac.uk")
+Description: A demonstration package providing GC content calculation
+    and reverse complement utilities for DNA sequences.
+    Created for the KIR R Packaging workshop.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Suggests:
+    covr,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+URL: https://github.com/kir-rescomp/kirgcdemo,
+    https://kir-rescomp.github.io/kirgcdemo/
+BugReports: https://github.com/kir-rescomp/kirgcdemo/issues
