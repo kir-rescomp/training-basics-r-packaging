@@ -1,0 +1,101 @@
+---
+title: "Analysing GC Content with kirgcdemo"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Analysing GC Content with kirgcdemo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment  = "#>"
+)
+```
+
+## Introduction
+
+The `kirgcdemo` package provides two core utilities for DNA sequence analysis:
+
+- `gc_content()` — percentage of G/C bases in a sequence
+- `reverse_complement()` — Watson–Crick reverse complement
+
+These are deliberately simple functions, chosen to keep the packaging concepts
+centre-stage. The same packaging techniques apply to much more complex tools.
+
+```{r library}
+library(kirgcdemo)
+```
+
+---
+
+## GC Content Across a Set of Sequences
+
+GC content varies widely across genomes and is biologically meaningful —
+high-GC regions are often gene-dense and thermally more stable. Promoter
+regions tend to be AT-rich; exons are often GC-enriched.
+
+```{r gc-example}
+seqs <- c(
+  promoter = "ATATATATATAT",
+  exon     = "GCGCGCGCATGC",
+  mixed    = "ATGCATGCATGC"
+)
+
+# Native pipe |> (R ≥ 4.1): no magrittr required
+gc_values <- seqs |> vapply(gc_content, numeric(1))
+gc_values
+```
+
+```{r barplot, fig.width=5, fig.height=4}
+barplot(
+  gc_values,
+  ylab = "GC content (%)",
+  main = "GC content by region",
+  col  = c("#4E9AF1", "#F1714E", "#6DBF67"),
+  ylim = c(0, 100)
+)
+abline(h = 50, lty = 2, col = "grey50")
+```
+
+---
+
+## Reverse Complement
+
+The reverse complement is fundamental to working with double-stranded DNA —
+primers, probes, and RNA-seq adapters are all defined relative to one strand.
+
+```{r revcomp-example}
+seq <- "ATGCTAGCTAGCT"
+cat("Forward:            ", seq, "\n")
+cat("Reverse complement: ", reverse_complement(seq), "\n")
+```
+
+A useful property: the reverse complement of the reverse complement is the
+original sequence.
+
+```{r identity-check}
+original <- "GCTAGCTAGCTA"
+stopifnot(reverse_complement(reverse_complement(original)) == original)
+cat("Round-trip check passed.\n")
+```
+
+---
+
+## Handling Ambiguous Bases
+
+Real sequencing data often contains `N` (any base). `gc_content()` counts `N`
+in the denominator but not as GC, diluting the result:
+
+```{r ambiguous}
+gc_content("GCNN")   # 50% — two GC out of four total bases
+gc_content("GGNN")   # 50% — two G out of four total bases
+gc_content("GGGG")   # 100% — no ambiguity
+```
+
+`reverse_complement()` passes ambiguous bases through unchanged:
+
+```{r ambiguous-revcomp}
+reverse_complement("ATGCN")   # "NGCAT"
+```
