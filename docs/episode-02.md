@@ -136,7 +136,7 @@ usethis::use_vignette("gc-analysis")
 This creates `vignettes/gc-analysis.Rmd`. Open it and write something like:
 
 
-````markdown
+````yaml
 ---
 title: "Analysing GC Content with kirgcdemo"
 output: rmarkdown::html_vignette
