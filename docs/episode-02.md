@@ -1,13 +1,13 @@
 # Episode 2: Docs That Write Themselves
 
-## Learning Objectives
+!!! clipboard-list "Learning Objectives"
 
-By the end of this episode you will be able to:
+    By the end of this episode you will be able to:
 
-- Write `roxygen2` documentation blocks that generate `man/` pages automatically
-- Use `devtools::document()` to regenerate `NAMESPACE` and `man/`
-- Write a vignette using R Markdown
-- Use the native pipe `|>` idiomatically in examples
+    - Write `roxygen2` documentation blocks that generate `man/` pages automatically
+    - Use `devtools::document()` to regenerate `NAMESPACE` and `man/`
+    - Write a vignette using R Markdown
+    - Use the native pipe `|>` idiomatically in examples
 
 ---
 
@@ -23,7 +23,7 @@ When you run `devtools::document()`, roxygen2:
 
 You **never manually edit** `man/` or `NAMESPACE`. roxygen2 owns them.
 
-!!! note "Compared to Python"
+!!! note-sticky "Compared to Python"
     This is the R equivalent of docstrings + Sphinx + `__all__` combined — except roxygen2 is part of the standard toolchain, not a separate documentation framework.
 
 ---
@@ -66,6 +66,7 @@ my_function <- function(name, another) { ... }
 
 Let's enrich the blocks in `R/sequences.R`:
 
+<div class="dracula" markdown="1">
 ```r
 #' Calculate GC content of a DNA sequence
 #'
@@ -93,6 +94,7 @@ gc_content <- function(sequence) {
   # ... (same implementation as Episode 1)
 }
 ```
+</div>
 
 !!! tip "Markdown in roxygen2"
     Because `DESCRIPTION` has `Roxygen: list(markdown = TRUE)`, you can use backticks, `**bold**`, and `[links](url)` in your documentation. No special syntax needed.
@@ -101,6 +103,7 @@ gc_content <- function(sequence) {
 
 ## 2.4 Running `devtools::document()`
 
+<div class="dracula" markdown="1">
 ```r
 devtools::document()
 #> ℹ Updating kirgcdemo documentation
@@ -116,6 +119,7 @@ Now preview your docs:
 ?gc_content
 ?reverse_complement
 ```
+</div>
 
 You should see properly formatted help pages — the same format as any CRAN package.
 
@@ -130,6 +134,7 @@ usethis::use_vignette("gc-analysis")
 ```
 
 This creates `vignettes/gc-analysis.Rmd`. Open it and write something like:
+
 
 ````markdown
 ---
