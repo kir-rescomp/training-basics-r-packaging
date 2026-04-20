@@ -1,0 +1,48 @@
+/* ── R Markdown theme ───────────────────────────────────────────────── */
+.rmd-block .highlight         { background: #1e1e2e !important; color: #cdd6f4 !important; }
+.rmd-block .highlight pre     { background: #1e1e2e !important; }
+.rmd-block .highlight code    { background: #1e1e2e !important; }
+
+/* YAML frontmatter */
+.rmd-block .highlight .gh     { color: #f5c2e7; font-weight: bold; }   /* --- delimiters — now clearly visible */
+.rmd-block .highlight .gu     { color: #89b4fa; font-weight: bold; }   /* ```{r chunk-name} headers */
+.rmd-block .highlight .nt     { color: #89dceb; font-weight: bold; }   /* title: output: vignette: keys */
+.rmd-block .highlight .l,
+.rmd-block .highlight .s,
+.rmd-block .highlight .s2     { color: #a6e3a1; }                      /* YAML values / strings */
+.rmd-block .highlight .na     { color: #89b4fa; }                      /* named attributes in chunk options */
+
+/* Vignette directives %\VignetteIndexEntry{} */
+.rmd-block .highlight .cs     { color: #fab387; font-style: italic; }
+
+/* R comments — clearly legible, clearly secondary */
+.rmd-block .highlight .c,
+.rmd-block .highlight .c1,
+.rmd-block .highlight .cm     { color: #7c8fbb; font-style: italic; }
+
+/* R keywords */
+.rmd-block .highlight .k,
+.rmd-block .highlight .kr     { color: #cba6f7; font-weight: bold; }
+.rmd-block .highlight .kc     { color: #cba6f7; }                      /* TRUE FALSE NULL NA */
+.rmd-block .highlight .kd     { color: #89dceb; font-style: italic; }  /* function */
+
+/* R names and functions */
+.rmd-block .highlight .nf     { color: #89b4fa; }
+.rmd-block .highlight .nb     { color: #89dceb; }
+.rmd-block .highlight .n,
+.rmd-block .highlight .nv     { color: #cdd6f4; }
+
+/* R literals */
+.rmd-block .highlight .m,
+.rmd-block .highlight .mi,
+.rmd-block .highlight .mf     { color: #fab387; }
+
+/* Operators and punctuation */
+.rmd-block .highlight .o      { color: #89dceb; }
+.rmd-block .highlight .p      { color: #cdd6f4; }
+
+/* Markdown headings inside the .Rmd prose sections */
+.rmd-block .highlight .gh     { color: #f5c2e7; font-weight: bold; }
+.rmd-block .highlight .gs     { color: #f9e2af; font-weight: bold; }
+.rmd-block .highlight .ge     { color: #f9e2af; font-style: italic; }
+.rmd-block .highlight .go     { color: #a6e3a1; }
